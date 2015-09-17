@@ -12,7 +12,8 @@ namespace GarageDoor.Consumer
 {
     public class GarageDoorControlViewModel : INotifyPropertyChanged
     {
-        private int _gaarageDoorState;
+        private int _lastGarageDoorState;
+        private int _garageDoorState;
         private string _garageDoorStateName;
         private double _openTime;
         private double _closeTime;
@@ -26,12 +27,12 @@ namespace GarageDoor.Consumer
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int GarageDoorState {
-            get { return _gaarageDoorState; }
+            get { return _garageDoorState; }
             set
             {
-                if (_gaarageDoorState != value)
+                if (_garageDoorState != value)
                 {
-                    _gaarageDoorState = value;
+                    _garageDoorState = value;
                     NotifyPropertyChanged("GarageDoorState");
                     switch(this.GarageDoorState)
                     {
@@ -129,10 +130,13 @@ namespace GarageDoor.Consumer
         private void Signals_GarageDoorStateChangedReceived(GarageDoorSignals sender, GarageDoorGarageDoorStateChangedReceivedEventArgs args)
         {
             GarageDoorState = Convert.ToInt32(args.NewState);
-            if (GarageDoorState== 1)
+            if (GarageDoorState== 1 && _lastGarageDoorState == 3)       // Current state is opened and last state was opening
                 OpenTime = Math.Round((args.ElapsedTime / 1000.0), 1);
-            else if (GarageDoorState == 2)
+            else if (GarageDoorState == 2 && _lastGarageDoorState==4)   // Current state is closed and last state was closing
                 CloseTime = Math.Round((args.ElapsedTime / 1000.0), 1);
+
+            _lastGarageDoorState = GarageDoorState;
+
         }
 
         public async void Close()
