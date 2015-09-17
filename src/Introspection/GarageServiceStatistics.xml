@@ -1,0 +1,57 @@
+<node name="/net/protosystem/GarageDoor" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xsi:noNamespaceSchemaLocation="https://allseenalliance.org/schemas/introspect.x sd">
+  <interface name="org.freedesktop.DBus.Properties">
+    <method name="Get">
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="v" direction="out"/>
+    </method>
+    <method name="Set">
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="v" direction="in"/>
+    </method>
+    <method name="GetAll">
+      <arg type="s" direction="in"/>
+      <arg type="a{sv}" direction="out"/>
+    </method>
+  </interface>
+  <interface name="net.protosystem.GarageDoorStatistics">
+    <description>Interface for exposing some statistics about the grarage door</description>
+    <property name="Version" type="q" access="read">
+      <description>The version of the interface</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+    </property>
+    <property name="ServiceVersion" type="u" access="read">
+      <description>The version of the service</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+    </property>
+    <property name="Location" type="s" access="readwrite">
+      <description>The location in the house this device is</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="OpenCountSinceLastService" type="u" access="read">
+      <description>The number of times the door has been opened since the last time it was serviced</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="ClosedCountSinceLastService" type="u" access="read">
+      <description>The number of times the door has been closed since the last time it was serviced</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="OpenCountByDay" type="u" access="read">
+      <description>The number of times the door has been opened for today</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="CloseCountByDay" type="u" access="read">
+      <description>The number of times the door has been closed for today</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="OpenCountLastSevenDays" type="u" access="read">
+      <description>The number of times the door has been opened for the last seven days</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="CloseCountLastSevenDays" type="u" access="read">
+      <description>The number of times the door has been closed for the last seven days</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+  </interface>
+</node>

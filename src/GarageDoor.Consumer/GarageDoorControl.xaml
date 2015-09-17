@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="GarageDoor.Consumer.GarageDoorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GarageDoor.Consumer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="70" Text="{Binding GarageDoorStateName}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="Open" Click="Open_Click" FontSize="70" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5">Open</Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="Close" Click="Close_Click" FontSize="70" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="5,5,5,5">Close</Button>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="5,5,5,5">
+            <TextBlock FontSize="50" Margin="5,5,5,5">Time:</TextBlock>
+            <TextBlock x:Name="OpenTime" FontSize="50" Margin="5,5,5,5" Text="{Binding OpenTime}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5,5,5,5">
+            <TextBlock FontSize="50" Margin="5,5,5,5">Time:</TextBlock>
+            <TextBlock x:Name="CloseTime" FontSize="50" Margin="5,5,5,5" Text="{Binding CloseTime}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

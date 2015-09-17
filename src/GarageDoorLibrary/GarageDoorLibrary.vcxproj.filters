@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>8fc02c90-a66e-40bc-b5da-4a3b55b39d04</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="AllJoynBusObjectManager.cpp" />
+    <ClCompile Include="AllJoynHelpers.cpp" />
+    <ClCompile Include="GarageDoorConsumer.cpp" />
+    <ClCompile Include="GarageDoorProducer.cpp" />
+    <ClCompile Include="GarageDoorServiceEventAdapter.cpp" />
+    <ClCompile Include="GarageDoorServiceEventArgs.cpp" />
+    <ClCompile Include="GarageDoorSignals.cpp" />
+    <ClCompile Include="GarageDoorWatcher.cpp" />
+    <ClCompile Include="TypeConversionHelpers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="AllJoynBusObjectManager.h" />
+    <ClInclude Include="AllJoynHelpers.h" />
+    <ClInclude Include="GarageDoorConsumer.h" />
+    <ClInclude Include="GarageDoorEventArgs.h" />
+    <ClInclude Include="GarageDoorMethodResults.h" />
+    <ClInclude Include="GarageDoorProducer.h" />
+    <ClInclude Include="GarageDoorServiceEventAdapter.h" />
+    <ClInclude Include="GarageDoorServiceEventArgs.h" />
+    <ClInclude Include="GarageDoorSignals.h" />
+    <ClInclude Include="GarageDoorStructures.h" />
+    <ClInclude Include="GarageDoorWatcher.h" />
+    <ClInclude Include="IGarageDoorService.h" />
+    <ClInclude Include="TypeConversionHelpers.h" />
+  </ItemGroup>
+</Project>

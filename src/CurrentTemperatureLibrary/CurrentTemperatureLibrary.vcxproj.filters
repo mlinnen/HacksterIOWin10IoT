@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>59bfc302-0d12-412a-8240-d6ddbe9540cd</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="AllJoynBusObjectManager.cpp" />
+    <ClCompile Include="AllJoynHelpers.cpp" />
+    <ClCompile Include="CurrentTemperatureConsumer.cpp" />
+    <ClCompile Include="CurrentTemperatureProducer.cpp" />
+    <ClCompile Include="CurrentTemperatureServiceEventAdapter.cpp" />
+    <ClCompile Include="CurrentTemperatureServiceEventArgs.cpp" />
+    <ClCompile Include="CurrentTemperatureSignals.cpp" />
+    <ClCompile Include="CurrentTemperatureWatcher.cpp" />
+    <ClCompile Include="TypeConversionHelpers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="AllJoynBusObjectManager.h" />
+    <ClInclude Include="AllJoynHelpers.h" />
+    <ClInclude Include="CurrentTemperatureConsumer.h" />
+    <ClInclude Include="CurrentTemperatureEventArgs.h" />
+    <ClInclude Include="CurrentTemperatureMethodResults.h" />
+    <ClInclude Include="CurrentTemperatureProducer.h" />
+    <ClInclude Include="CurrentTemperatureServiceEventAdapter.h" />
+    <ClInclude Include="CurrentTemperatureServiceEventArgs.h" />
+    <ClInclude Include="CurrentTemperatureSignals.h" />
+    <ClInclude Include="CurrentTemperatureStructures.h" />
+    <ClInclude Include="CurrentTemperatureWatcher.h" />
+    <ClInclude Include="ICurrentTemperatureService.h" />
+    <ClInclude Include="TypeConversionHelpers.h" />
+  </ItemGroup>
+</Project>

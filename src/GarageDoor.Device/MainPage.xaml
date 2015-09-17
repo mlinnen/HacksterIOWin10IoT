@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="GarageDoor.Device.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GarageDoor.Producer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="rawValue" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="voltageValue" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+        <StackPanel Orientation="Vertical" Grid.Row="2">
+            <TextBlock x:Name="tempValue" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock x:Name="tempFarhrenheitValue" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

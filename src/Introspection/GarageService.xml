@@ -1,0 +1,61 @@
+<node name="/net/protosystem/GarageDoor" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xsi:noNamespaceSchemaLocation="https://allseenalliance.org/schemas/introspect.x sd">
+  <interface name="org.freedesktop.DBus.Properties">
+    <method name="Get">
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="v" direction="out"/>
+    </method>
+    <method name="Set">
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="v" direction="in"/>
+    </method>
+    <method name="GetAll">
+      <arg type="s" direction="in"/>
+      <arg type="a{sv}" direction="out"/>
+    </method>
+  </interface>
+  <interface name="net.protosystem.GarageDoor">
+    <description>Interface for controlling a garage door</description>
+    <property name="Version" type="q" access="read">
+      <description>The version of the interface</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+    </property>
+    <property name="ServiceVersion" type="u" access="read">
+      <description>The version of the service</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+    </property>
+    <property name="Location" type="s" access="readwrite">
+      <description>The location in the house this device is</description>
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+    </property>
+    <property name="DoorState" type="(ys)" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+      <description>
+        (struct)(byte)doorState, (string)doorStateStr
+        The current garage door state as a byte and string.
+      </description>
+    </property>
+    <!--
+    GarageDoorStateChanged
+    Valid States: 0=Unknown, 1=Opened, 2=Closed, 3=Opening, 4=Closing
+    Elapsed Time: in milliseconds and is only available when NewState = Closed or Opened. It represents the time it took to Open or Close the door fully
+    -->
+    <signal name="GarageDoorStateChanged" sessioncast="true">
+      <description>The garage door has changed state</description>
+      <arg name="OldState" type="(ys)" direction="out"/>
+      <arg name="NewState" type="(ys)" direction="out"/>
+      <arg name="ElapsedTime" type="u" direction="out"/>
+    </signal>
+    <method name="OpenOrCloseGarage">
+      <description>A single method with a parameter to open or close the garge if it is not already in that state</description>
+      <arg name="Open" type="b" direction="in"/>
+    </method>
+    <method name="OpenGarage">
+      <description>Opens the Garage if it is not already open</description>
+    </method>
+    <method name="CloseGarage">
+      <description>Closes the Garage if it is not already closed</description>
+    </method>
+  </interface>
+</node>

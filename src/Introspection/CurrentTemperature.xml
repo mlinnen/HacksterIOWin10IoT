@@ -1,0 +1,22 @@
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.allseenalliance.org/schemas/introspect.xsd">
+    <interface name="net.protosystem.SmartSpaces.Environment.CurrentTemperature">
+        <description language="en">This interface provides capability to represent current temperature.</description>
+        <annotation name="org.alljoyn.Bus.Secure" value="false"/>
+        <property name="Version" type="q" access="read">
+            <description language="en">The interface version</description>
+            <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+        </property>
+        <property name="CurrentValue" type="d" access="read">
+            <description language="en">Current temperature expressed in Celsius</description>
+            <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+        </property>
+        <property name="Location" type="s" access="read">
+            <description language="en">Location information of a device</description>
+            <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+        </property>
+        <method name="SetLocation">
+            <description language="en">Set location information of a device</description>
+            <arg name="location" type="s" direction="in"/>
+        </method>
+    </interface>
+</node>
