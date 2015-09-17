@@ -57,33 +57,5 @@ namespace GarageDoor.Device
 
         }
 
-        private async void Timer_Tick(object sender, object e)
-        {
-            this.timer.Stop();
-            if (_firstTime)
-            {
-                _adcDriver = new Mcp3008(0);
-                await _adcDriver.Connect();
-                //int data = _adcDriver.Read(0);
-                _firstTime = false;
-            }
-
-            int value = _adcDriver.Read(0);
-            rawValue.Text = value.ToString();
-            double voltage = (value / 1024.0 * 5.16);
-            //double voltage = (value - 0.5)* 100;
-            voltageValue.Text = voltage.ToString();
-            //double degrees = 100 * (voltage) - 50;
-            double degrees = (voltage - 0.5) * 100;
-            tempValue.Text = degrees.ToString();
-            double degreesFahrenheit = (degrees * 9.0 / 5.16) + 32;
-            tempFarhrenheitValue.Text = degreesFahrenheit.ToString();
-            this.timer.Start();
-        }
-
-        private async void ReadData()
-        {
-
-        }
     }
 }
