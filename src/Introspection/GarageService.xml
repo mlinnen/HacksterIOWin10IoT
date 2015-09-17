@@ -1,4 +1,4 @@
-<node name="/net/protosystem/GarageDoor" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xsi:noNamespaceSchemaLocation="https://allseenalliance.org/schemas/introspect.x sd">
+<node name="net.protosystem.GarageDoor" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xsi:noNamespaceSchemaLocation="https://allseenalliance.org/schemas/introspect.x sd">
   <interface name="org.freedesktop.DBus.Properties">
     <method name="Get">
       <arg type="s" direction="in"/>
