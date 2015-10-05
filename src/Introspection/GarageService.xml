@@ -43,9 +43,9 @@
     -->
     <signal name="GarageDoorStateChanged" sessioncast="true">
       <description>The garage door has changed state</description>
-      <arg name="OldState" type="(ys)" direction="out"/>
-      <arg name="NewState" type="(ys)" direction="out"/>
-      <arg name="ElapsedTime" type="u" direction="out"/>
+      <arg name="OldState" type="u" direction="out"/>
+      <arg name="NewState" type="u" direction="out"/>
+      <arg name="ElapsedTime" type="x" direction="out"/>
     </signal>
     <method name="OpenOrCloseGarage">
       <description>A single method with a parameter to open or close the garge if it is not already in that state</description>
